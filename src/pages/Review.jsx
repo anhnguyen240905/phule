@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 export default function Review({ setReview, next, back }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md text-center">
