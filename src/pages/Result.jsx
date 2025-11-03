@@ -1,3 +1,4 @@
+import React from "react";
 export default function Result({ selected, favorite, nextTry, review, restart }){
   return (
     <div className="bg-gradient-to-br from-cyan-50 to-yellow-50 rounded-2xl p-6 shadow-lg text-center">
