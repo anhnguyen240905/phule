@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 export default function ChooseFavorite({ selected, setFavorite, setNextTry, next, back }){
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md">
