@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Welcome from "./pages/Welcome";
-import SelectFoods from "./pages/SelectFoods";
+import SelectFood from "./pages/SelectFoods";
 import ChooseFavorite from "./pages/ChooseFavorite";
 import Review from "./pages/Review";
 import Result from "./pages/Result";
