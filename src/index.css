@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[url('/bg-blur.jpg')] bg-cover bg-center min-h-screen;
+  @apply bg-[url('to-hdsd-02.jpg')] bg-cover bg-center min-h-screen;
 }
