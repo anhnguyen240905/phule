@@ -3,7 +3,7 @@ export default function Welcome({ next }) {
     <div
       className="rounded-2xl p-8 shadow-xl text-center text-white"
       style={{
-        backgroundImage: "url('/TO-HDSD-02.jpg')", // ← CHÈN ẢNH Ở ĐÂY
+        backgroundImage: "url('/to-hdsd-02.jpg')", // ← CHÈN ẢNH Ở ĐÂY
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
