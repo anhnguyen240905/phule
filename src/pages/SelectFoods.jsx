@@ -1,22 +1,90 @@
-import { foods } from "../data";
+import { useState } from "react";
 
-export default function SelectFoods({ selected, setSelected, next }){
-  const toggle = (item) => {
-    setSelected(prev => prev.includes(item) ? prev.filter(x=>x!==item) : [...prev, item]);
+export default function SelectFood({ next, saveSelection }) {
+  // Danh sách món ăn (bạn có thể chỉnh lại tùy ý)
+  const foods = [
+    {
+      id: 1,
+      name: "Mì Quảng",
+      img: "public/", // ← CHÈN ẢNH Ở ĐÂY
+      desc: "Sợi mì vàng óng, nước dùng đậm đà, đặc sản miền Trung.",
+    },
+    {
+      id: 2,
+      name: "Bánh tráng trộn",
+      img: "/foods/banhtrangtron.jpg", // ← CHÈN ẢNH Ở ĐÂY
+      desc: "Món ăn vặt được yêu thích với vị chua cay mặn ngọt hài hòa.",
+    },
+    {
+      id: 3,
+      name: "Cao lầu",
+      img: "/foods/cao-lau.jpg", // ← CHÈN ẢNH Ở ĐÂY
+      desc: "Món ăn nổi tiếng của Hội An, sợi mì dai và thịt xá xíu thơm.",
+    },
+    {
+      id: 4,
+      name: "Chè bưởi",
+      img: "/foods/chebuoi.jpg", // ← CHÈN ẢNH Ở ĐÂY
+      desc: "Món tráng miệng ngọt thanh, giải nhiệt tuyệt vời.",
+    },
+  ];
+
+  const [selected, setSelected] = useState([]);
+
+  // Toggle chọn món
+  const toggleFood = (id) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    );
   };
+
+  const handleNext = () => {
+    const selectedFoods = foods.filter((f) => selected.includes(f.id));
+    saveSelection(selectedFoods); // lưu để hiển thị ở trang sau
+    next();
+  };
+
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Bạn đã ăn qua bao nhiêu món “Đậm Đà” dưới đây?</h2>
-      <div className="grid grid-cols-3 gap-3">
-        {foods.map(f => (
-          <button key={f} onClick={() => toggle(f)} className={`p-3 rounded-xl border text-left ${selected.includes(f) ? "bg-amber-200 border-amber-400" : "bg-white"}`}>
-            {f}
-          </button>
+    <div className="p-8 text-center">
+      <h2 className="text-3xl font-bold mb-6">Chọn món bạn muốn thử</h2>
+
+      {/* Lưới hiển thị món ăn */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {foods.map((food) => (
+          <div
+            key={food.id}
+            onClick={() => toggleFood(food.id)}
+            className={`cursor-pointer rounded-2xl shadow-lg overflow-hidden border-4 transition-all ${
+              selected.includes(food.id)
+                ? "border-orange-500 scale-105"
+                : "border-transparent hover:scale-105"
+            }`}
+          >
+            <img
+              src={food.img} // ← ẢNH HIỂN THỊ Ở ĐÂY
+              alt={food.name}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4 bg-white">
+              <h3 className="font-bold text-lg text-gray-800">{food.name}</h3>
+              <p className="text-sm text-gray-600 mt-1">{food.desc}</p>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="mt-6 flex justify-end">
-        <button onClick={next} className="bg-orange-500 text-white px-4 py-2 rounded-lg">Tiếp theo</button>
-      </div>
+
+      {/* Nút tiếp tục */}
+      <button
+        onClick={handleNext}
+        disabled={selected.length === 0}
+        className={`mt-8 px-8 py-3 rounded-full text-white font-semibold ${
+          selected.length === 0
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-orange-500 hover:bg-orange-600"
+        }`}
+      >
+        Xem kết quả ({selected.length})
+      </button>
     </div>
   );
 }
