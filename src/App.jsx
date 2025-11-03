@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import ChooseFavorite from "./ChooseFavorite";
-import SelectFood from "./SelectFood";
-import Review from "./Review";
-import Result from "./Result";
+import Welcome from "./pages/Welcome";
+import SelectFoods from "./pages/SelectFoods";
+import ChooseFavorite from "./pages/ChooseFavorite";
+import Review from "./pages/Review";
+import Result from "./pages/Result";
 
 export default function App() {
   const [step, setStep] = useState(1);
