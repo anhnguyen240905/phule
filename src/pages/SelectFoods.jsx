@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 export default function SelectFood({ next, saveSelection }) {
   // Danh sách món ăn (bạn có thể chỉnh lại tùy ý)
   const foods = [
