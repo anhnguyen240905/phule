@@ -82,7 +82,7 @@ export default function SelectFood({ next, saveSelection }) {
             : "bg-orange-500 hover:bg-orange-600"
         }`}
       >
-        Xem kết quả ({selected.length})
+        Tiếp tục ({selected.length})
       </button>
     </div>
   );
