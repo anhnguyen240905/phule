@@ -6,25 +6,25 @@ export default function SelectFood({ next, saveSelection }) {
     {
       id: 1,
       name: "Mì Quảng",
-      img: "public/Người lạ.png", // ← CHÈN ẢNH Ở ĐÂY
+      img: "/Người lạ.png", // ← CHÈN ẢNH Ở ĐÂY
       desc: "Sợi mì vàng óng, nước dùng đậm đà, đặc sản miền Trung.",
     },
     {
       id: 2,
       name: "Bánh tráng trộn",
-      img: "public/Người lạ có túi.png", // ← CHÈN ẢNH Ở ĐÂY
+      img: "/Người lạ có túi.png", // ← CHÈN ẢNH Ở ĐÂY
       desc: "Món ăn vặt được yêu thích với vị chua cay mặn ngọt hài hòa.",
     },
     {
       id: 3,
       name: "Cao lầu",
-      img: "public/An toàn điện.png", // ← CHÈN ẢNH Ở ĐÂY
+      img: "/An toàn điện.png", // ← CHÈN ẢNH Ở ĐÂY
       desc: "Món ăn nổi tiếng của Hội An, sợi mì dai và thịt xá xíu thơm.",
     },
     {
       id: 4,
       name: "Chè bưởi",
-      img: "public/An toàn nước_1.png", // ← CHÈN ẢNH Ở ĐÂY
+      img: "/An toàn nước_1.png", // ← CHÈN ẢNH Ở ĐÂY
       desc: "Món tráng miệng ngọt thanh, giải nhiệt tuyệt vời.",
     },
   ];
