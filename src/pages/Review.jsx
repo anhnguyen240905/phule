@@ -4,7 +4,7 @@ export default function Review({ setReview, next, back }) {
     <div className="bg-white rounded-2xl p-6 shadow-md text-center">
       {/* ẢNH CHÈN Ở ĐÂY */}
       <img
-        src="/TỜ HDSD-02.jpg"   // ← ĐỔI THÀNH ẢNH BẠN MUỐN
+        src="/Gemini_Generated_Image_rwa9v6rwa9v6rwa9.png"   // ← ĐỔI THÀNH ẢNH BẠN MUỐN
         alt="Ẩm thực Đà Nẵng"
         className="w-full max-h-64 object-cover rounded-xl mb-4"
       />
