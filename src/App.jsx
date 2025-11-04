@@ -13,6 +13,13 @@ export default function App() {
   const [nextTry, setNextTry] = useState("");
   const [review, setReview] = useState("");
 
+const foods = [
+    { id: 1, name: "Mì Quảng", img: "/Gemini_Generated_Image_rwa9v6rwa9v6rwa9.png", desc: "Sợi mì vàng óng, nước dùng đậm đà, đặc sản miền Trung." },
+    { id: 2, name: "Bánh tráng trộn", img: "/an-toan-nuoc-1.png", desc: "Món ăn vặt được yêu thích với vị chua cay mặn ngọt hài hòa." },
+    { id: 3, name: "Cao lầu", img: "/an-toan-nuoc-2.png", desc: "Món ăn nổi tiếng của Hội An, sợi mì dai và thịt xá xíu thơm." },
+    { id: 4, name: "Chè bưởi", img: "/an-toan-nuoc-1.png", desc: "Món tráng miệng ngọt thanh, giải nhiệt tuyệt vời." },
+  ];
+  
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-4xl">
