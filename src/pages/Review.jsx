@@ -1,10 +1,25 @@
 import React, { useState } from "react";
-export default function Review({ setReview, next, back }) {
+
+export default function Review({ selected, setReview, next, back }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md text-center">
+      {/* Hiển thị danh sách món đã chọn */}
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        {selected.map((item) => (
+          <div key={item.id} className="flex flex-col items-center">
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-24 h-24 object-cover rounded-lg"
+            />
+            <p className="mt-2 text-sm font-semibold">{item.name}</p>
+          </div>
+        ))}
+      </div>
+
       {/* ẢNH CHÈN Ở ĐÂY */}
       <img
-        src="/Gemini_Generated_Image_rwa9v6rwa9v6rwa9.png"   // ← ĐỔI THÀNH ẢNH BẠN MUỐN
+        src="/Gemini_Generated_Image_rwa9v6rwa9v6rwa9.png"
         alt="Ẩm thực Đà Nẵng"
         className="w-full max-h-64 object-cover rounded-xl mb-4"
       />
