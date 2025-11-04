@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Welcome from "./pages/Welcome.jsx";
 import SelectFoods from "./pages/SelectFoods.jsx";
 import ChooseFavorite from "./pages/ChooseFavorite.jsx";
+import ChooseNextTry from "./pages/ChooseNextTry.jsx";
 import Review from "./pages/Review.jsx";
 import Result from "./pages/Result.jsx";
 
@@ -32,23 +33,42 @@ export default function App(){
     selected={selected}
     favorite={favorite}
     setFavorite={setFavorite}
-    setNextTry={setNextTry}
     next={() => setStep(3)}
     back={() => setStep(1)}
   />
 )}
-        {step === 3 && (
-  <Review
+
+{step === 3 && (
+  <ChooseNextTry
     selected={selected}
-    setReview={setReview}
+    nextTry={nextTry}
+    setNextTry={setNextTry}
     next={() => setStep(4)}
     back={() => setStep(2)}
   />
 )}
-        {step === 4 && <Result selected={selected} favorite={favorite} nextTry={nextTry} review={review} restart={() => {
-          setSelected([]); setFavorite(""); setNextTry(""); setReview(""); setStep(0);
-        }}/>}
-      </div>
-    </div>
-  );
-}
+
+{step === 4 && (
+  <Review
+    selected={selected}
+    setReview={setReview}
+    next={() => setStep(5)}
+    back={() => setStep(3)}
+  />
+)}
+
+{step === 5 && (
+  <Result
+    selected={selected}
+    favorite={favorite}
+    nextTry={nextTry}
+    review={review}
+    restart={() => {
+      setSelected([]);
+      setFavorite("");
+      setNextTry("");
+      setReview("");
+      setStep(0);
+    }}
+  />
+)}
