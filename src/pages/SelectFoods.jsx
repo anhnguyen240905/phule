@@ -8,7 +8,7 @@ export default function SelectFoods({ next = () => {}, saveSelection = () => {} 
     { id: 3, name: "Cao lầu", img: "/an-toan-nuoc-2.png", desc: "Món ăn nổi tiếng của Hội An, sợi mì dai và thịt xá xíu thơm." },
     { id: 4, name: "Chè bưởi", img: "/an-toan-nuoc-1.png", desc: "Món tráng miệng ngọt thanh, giải nhiệt tuyệt vời." },
   ];
-
+  const [selected, setSelected] = useState([]);
   const toggleFood = (id) => {
   setSelected((prev) =>
     prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
