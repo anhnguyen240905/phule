@@ -38,14 +38,15 @@ export default function App() {
         )}
 
         {step === 3 && (
-          <ChooseNextTry
-            selected={selected}
-            nextTry={nextTry}
-            setNextTry={setNextTry}
-            next={() => setStep(4)}
-            back={() => setStep(2)}
-          />
-        )}
+  <ChooseNextTry
+    selected={selected}
+    favorite={favorite}   // thêm dòng này để truyền món yêu thích nhất
+    nextTry={nextTry}
+    setNextTry={setNextTry}
+    next={() => setStep(4)}
+    back={() => setStep(2)}
+  />
+)}
 
         {step === 4 && (
           <Review
