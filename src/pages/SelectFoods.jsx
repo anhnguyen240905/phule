@@ -17,9 +17,10 @@ export default function SelectFoods({ next = () => {}, saveSelection = () => {} 
 
   const handleNext = () => {
     // --- LOG để debug ---
-  console.log("props.next:", next);
-  console.log("props.saveSelection:", saveSelection);
-  console.log("selected ids:", selected);
+    console.log("SelectFood.handleNext called");
+    console.log("props.saveSelection typeof:", typeof saveSelection);
+    console.log("props.next typeof:", typeof next);
+    console.log("selected ids:", selected);
 
     const selectedFoods = foods.filter((f) => selected.includes(f.id));
 
