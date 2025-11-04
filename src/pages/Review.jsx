@@ -4,18 +4,20 @@ export default function Review({ selected, setReview, next, back }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md text-center">
       {/* Hiển thị danh sách món đã chọn */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        {selected.map((item) => (
-          <div key={item.id} className="flex flex-col items-center">
-            <img
-              src={item.img}
-              alt={item.name}
-              className="w-24 h-24 object-cover rounded-lg"
-            />
-            <p className="mt-2 text-sm font-semibold">{item.name}</p>
-          </div>
-        ))}
+     <div className="grid grid-cols-2 gap-4 mb-4">
+  {selected && selected.length > 0 ? (
+    selected.map((item, index) => (
+      <div key={index} className="flex flex-col items-center">
+        <div className="w-24 h-24 bg-gray-100 flex items-center justify-center rounded-lg">
+          <span className="text-sm text-gray-600">{item}</span>
+        </div>
       </div>
+    ))
+  ) : (
+    <p className="text-gray-500 col-span-2">Bạn chưa chọn món nào.</p>
+  )}
+</div>
+
 
       {/* ẢNH CHÈN Ở ĐÂY */}
       <img
