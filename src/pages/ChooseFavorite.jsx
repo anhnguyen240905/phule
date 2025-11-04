@@ -4,11 +4,19 @@ export default function ChooseFavorite({ selected, setFavorite, setNextTry, next
     <div className="bg-white rounded-2xl p-6 shadow-md">
       <h2 className="text-xl font-semibold mb-3">Đâu là “món ruột” của bạn?</h2>
       <div className="flex gap-3 flex-wrap">
-        {selected.length === 0 ? <p className="text-gray-500">Bạn chưa chọn món ở bước trước.</p> : selected.map(s => (
-          <button key={s} onClick={() => setFavorite(s)} className="px-3 py-2 border rounded-lg">
-            {s}
-          </button>
-        ))}
+        {selected.length === 0 ? (
+  <p className="text-gray-500">Bạn chưa chọn món ở bước trước.</p>
+) : (
+  selected.map((s) => (
+    <button
+      key={s.id}
+      onClick={() => setFavorite(s.name)}
+      className="px-3 py-2 border rounded-lg"
+    >
+      {s.name}
+    </button>
+  ))
+)}
       </div>
       <div className="mt-4">
         <label className="block text-gray-700">Món bạn muốn thử tiếp theo</label>
