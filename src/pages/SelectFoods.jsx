@@ -9,14 +9,11 @@ export default function SelectFoods({ next = () => {}, saveSelection = () => {} 
     { id: 4, name: "Chè bưởi", img: "/an-toan-nuoc-1.png", desc: "Món tráng miệng ngọt thanh, giải nhiệt tuyệt vời." },
   ];
 
-  const [selected, setSelected] = useState([]);
-
-  // Toggle chọn món
   const toggleFood = (id) => {
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
-  };
+  setSelected((prev) =>
+    prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+  );
+};
 
   const handleNext = () => {
     // --- LOG để debug ---
