@@ -39,8 +39,9 @@ export default function App() {
 
         {step === 3 && (
   <ChooseNextTry
+    foods={foods}       // thêm dòng này
     selected={selected}
-    favorite={favorite}   // thêm dòng này để truyền món yêu thích nhất
+    favorite={favorite}
     nextTry={nextTry}
     setNextTry={setNextTry}
     next={() => setStep(4)}
