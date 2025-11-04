@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SelectFood({ next = () => {}, saveSelection = () => {} }) {
+export default function SelectFoods({ next = () => {}, saveSelection = () => {} }) {
   // Danh sách món ăn (bạn có thể chỉnh lại tùy ý)
   const foods = [
     { id: 1, name: "Mì Quảng", img: "/Gemini_Generated_Image_rwa9v6rwa9v6rwa9.png", desc: "Sợi mì vàng óng, nước dùng đậm đà, đặc sản miền Trung." },
