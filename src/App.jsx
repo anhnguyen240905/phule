@@ -21,6 +21,8 @@ export default function App(){
         {step === 0 && <Welcome next={() => setStep(1)} />}
         {step === 1 && (
   <SelectFoods
+    selected={selected}
+    setSelected={setSelected}
     saveSelection={(foods) => setSelected(foods)}
     next={() => setStep(2)}
   />
