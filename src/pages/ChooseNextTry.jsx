@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function ChooseNextTry({
+  foods,
   selected,
   favorite,
   nextTry,
@@ -8,8 +9,10 @@ export default function ChooseNextTry({
   next,
   back,
 }) {
-  // Lấy danh sách món còn lại (ngoại trừ món favorite)
-  const remainingFoods = selected.filter((f) => f.name !== favorite);
+  // Lấy danh sách các món KHÔNG được chọn ở SelectFoods
+  const remainingFoods = foods.filter(
+    (f) => !selected.some((s) => s.name === f.name)
+  );
 
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md">
@@ -19,12 +22,12 @@ export default function ChooseNextTry({
 
       <div className="flex gap-3 flex-wrap">
         {remainingFoods.length === 0 ? (
-          <p className="text-gray-500">Không còn món nào khác để chọn.</p>
+          <p className="text-gray-500">Bạn đã chọn hết các món rồi!</p>
         ) : (
           remainingFoods.map((f) => (
             <button
               key={f.id}
-              onClick={() => setNextTry(f.name)} // chỉ lưu tên, không lưu object
+              onClick={() => setNextTry(f.name)}
               className={`px-3 py-2 border rounded-lg ${
                 nextTry === f.name
                   ? "bg-orange-500 text-white"
