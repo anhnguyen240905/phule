@@ -21,9 +21,8 @@ export default function App(){
         {step === 0 && <Welcome next={() => setStep(1)} />}
         {step === 1 && (
   <SelectFoods
-    selected={selected}
-    setSelected={setSelected}
-    next={() => setStep(2)} // PHẢI là hàm, không phải setStep(2) trực tiếp
+    saveSelection={(foods) => setSelected(foods)}
+    next={() => setStep(2)}
   />
 )}
         {step === 2 && <ChooseFavorite selected={selected} setFavorite={setFavorite} setNextTry={setNextTry} next={() => setStep(3)} back={() => setStep(1)} />}
