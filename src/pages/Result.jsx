@@ -1,4 +1,3 @@
-npm install html2canvas
 import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 
