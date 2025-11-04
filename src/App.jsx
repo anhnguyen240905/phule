@@ -28,7 +28,14 @@ export default function App(){
   />
 )}
         {step === 2 && <ChooseFavorite selected={selected} setFavorite={setFavorite} setNextTry={setNextTry} next={() => setStep(3)} back={() => setStep(1)} />}
-        {step === 3 && <Review setReview={setReview} next={() => setStep(4)} back={() => setStep(2)} />}
+        {step === 3 && (
+  <Review
+    selected={selected}
+    setReview={setReview}
+    next={() => setStep(4)}
+    back={() => setStep(2)}
+  />
+)}
         {step === 4 && <Result selected={selected} favorite={favorite} nextTry={nextTry} review={review} restart={() => {
           setSelected([]); setFavorite(""); setNextTry(""); setReview(""); setStep(0);
         }}/>}
